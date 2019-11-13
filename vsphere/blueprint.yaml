@@ -1,0 +1,16 @@
+name: vSphere
+version: 1.1
+inputs: {}
+resources:
+  Cloud_vSphere_Machine_1:
+    type: Cloud.vSphere.Machine
+    properties:
+      image: 'ubuntu'
+      cpuCount: 2
+      totalMemoryMB: 2048
+      networks:
+        - network: '${resource.Cloud_vSphere_Network_1.id}'
+  Cloud_vSphere_Network_1:
+    type: Cloud.vSphere.Network
+    properties:
+      networkType: existing
